@@ -1,0 +1,7 @@
+- env_name: "TOKEN"
+  keys: ["TOKEN"]
+  converter: str
+- env_name: "FMPAPI"
+  keys: ["FMPAPI"]
+  converter: str
+
