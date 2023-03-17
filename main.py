@@ -10,7 +10,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 cogs_list = [
-    'stocks'
+    'stocks',
 ]
 
 def main():

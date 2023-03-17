@@ -1,3 +1,4 @@
 TOKEN: str
 FMPAPI: str
 GUILDS: ['445474022113804288']
+STOCK_DB: 'test.json'
