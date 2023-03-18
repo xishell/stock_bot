@@ -23,28 +23,5 @@ def embed_price(stocks: list, title: str, desc=None):
         color=rand_color
     )
     for i in stocks:
-        embed.add_field(name=i, value=f"${st.price_tracker(i)}", inline=True)
+        embed.add_field(name=i, value=f"${st.get_info(i)['price']}", inline=True)
     return embed
-
-def add_stocks(file, stocks):
-    try:
-        with open(file, 'r+') as fw:
-            data = fw.read()
-            if data:
-                tmp = json.loads(data)
-                tmp.extend(stocks)
-                fw.seek(0)
-                fw.truncate()
-                fw.write(json.dumps(tmp))
-            else:
-                fw.write(json.dumps(stocks))
-        resp = f"tracking: {', '.join(stocks)}"
-    except:
-        resp = "An error occured!"
-    return resp
-    
-
-def read_stocks(file):
-    with open(file, "r") as fr:
-        data = fr.read()
-        return json.loads(data)

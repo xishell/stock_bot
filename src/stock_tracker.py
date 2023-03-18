@@ -4,10 +4,10 @@ import src.load_config as lc
 cfg = lc.load_cfg()
 fmpapi = cfg['FMPAPI']
 
-def price_tracker(stock):
+def get_info(stock):
     try:
-        prices = requests.get(f'https://financialmodelingprep.com/api/v3/quote/{stock.upper().strip()}?apikey={fmpapi}').json()
-        stockPrice = prices[0]['price']
+        info = requests.get(f'https://financialmodelingprep.com/api/v3/quote/{stock.upper().strip()}?apikey={fmpapi}').json()
+        ret_info = info[0]
     except IndexError:
-        stockPrice = "NULL"
-    return stockPrice
+        ret_info = "NULL"
+    return ret_info
